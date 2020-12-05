@@ -12,6 +12,7 @@
 @include('front.layouts.includes.header')
 
 @yield('sections')
+
 @include('front.layouts.includes.footer')
     <!-- End footer -->
 

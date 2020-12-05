@@ -1,15 +1,20 @@
 <section id="home-section">
 
 
-    <div id="rev_slider_110_1_wrapper" class="rev_slider_wrapper fullscreen-container" data-alias="rotating-words82" style="background-color:#e5e5e5;padding:0px;">
+    <div id="rev_slider_110_1_wrapper" class="rev_slider_wrapper fullscreen-container" data-alias="rotating-words82"
+         style="background-color:#e5e5e5;padding:0px;">
         <!-- START REVOLUTION SLIDER 5.0.7 fullscreen mode -->
         <div id="rev_slider_110_1" class="rev_slider fullscreenbanner" style="display:none;" data-version="5.0.7">
-            <ul>	<!-- SLIDE  -->
-                <li data-index="rs-333" data-transition="fade" data-slotamount="default"  data-easein="Power3.easeInOut" data-easeout="Power3.easeInOut" data-masterspeed="1500"  data-thumb="../../assets/FrontEnd/images/office_cover-100x50.jpg"  data-rotate="0"  data-saveperformance="off"  data-title="Intro" data-description="">
+            <ul>    <!-- SLIDE  -->
+                <li data-index="rs-333" data-transition="fade" data-slotamount="default" data-easein="Power3.easeInOut"
+                    data-easeout="Power3.easeInOut" data-masterspeed="1500"
+                    data-thumb="../../assets/FrontEnd/images/office_cover-100x50.jpg" data-rotate="0"
+                    data-saveperformance="off" data-title="Intro" data-description="">
                     <!-- MAIN IMAGE -->
-                    <img src="{{asset('assets/FrontEnd/upload/others/slide.jpg')}}"  alt=""  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
+                    <img src="{{asset('assets/FrontEnd/upload/others/slide.jpg')}}" alt=""
+                         data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat"
+                         data-bgparallax="10" class="rev-slidebg" data-no-retina>
                     <!-- LAYERS -->
-
 
 
                     <!-- LAYER NR. 1 -->
@@ -169,7 +174,8 @@
                          data-responsive_offset="on"
                          data-responsive="off"
 
-                         style="z-index: 11; white-space: nowrap;"> <img src="{{asset('assets/FrontEnd/images/arrow.png')}}" alt="">
+                         style="z-index: 11; white-space: nowrap;"><img
+                            src="{{asset('assets/FrontEnd/images/arrow.png')}}" alt="">
                     </div>
 
                     <!-- LAYER NR. 8 -->
@@ -192,13 +198,15 @@
                          data-responsive_offset="off"
 
 
-                         style="z-index: 12; white-space: nowrap; font-weight: 700; color: rgb(255, 255, 255);">Delivering all Excellent Business Solution in the Core Services
+                         style="z-index: 12; white-space: nowrap; font-weight: 700; color: rgb(255, 255, 255);">
+                        Delivering all Excellent Business Solution in the Core Services
                     </div>
                 </li>
             </ul>
             <div class="tp-static-layers"></div>
             <div class="tp-bannertimer tp-bottom" style="visibility: hidden !important;"></div>
         </div>
-    </div><!-- END REVOLUTION SLIDER -->
+    </div>
+    <!-- END REVOLUTION SLIDER -->
 
 </section>
