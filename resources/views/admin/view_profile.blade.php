@@ -56,38 +56,38 @@
             var username = $('#name').val();
             var email = $('#email').val();
 
-            // if (username.trim() == "")
-            // {
-            //     Swal.fire({
-            //         icon: 'error',
-            //         title: 'Uyarı',
-            //         text: 'Kullanıcı adı boş bırakılamaz!',
-            //         confirmButtonText:'Tamam'
-            //     })
-            // }
-            // else if (email.trim() == "")
-            // {
-            //     Swal.fire({
-            //         icon: 'error',
-            //         title: 'Uyarı',
-            //         text: 'Email boş bırakılamaz!',
-            //         confirmButtonText:'Tamam'
-            //     })
-            // }
-            // else if (!validateEmail(email))
-            // {
-            //     Swal.fire({
-            //         icon: 'error',
-            //         title: 'Uyarı',
-            //         text: 'Geçerli bir email adresi giriniz!',
-            //         confirmButtonText:'Tamam'
-            //
-            //     })
-            // }
-            // else
-            // {
+            if (username.trim() == "")
+            {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Uyarı',
+                    text: 'Kullanıcı adı boş bırakılamaz!',
+                    confirmButtonText: 'Tamam'
+                })
+            }
+            else if (email.trim() == "")
+            {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Uyarı',
+                    text: 'Email boş bırakılamaz!',
+                    confirmButtonText: 'Tamam'
+                })
+            }
+            else if (!validateEmail(email))
+            {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Uyarı',
+                    text: 'Geçerli bir email adresi giriniz!',
+                    confirmButtonText: 'Tamam'
+
+                })
+            }
+            else
+            {
                 $('#user-update-form').submit();
-            // }
+            }
         })
 
         function validateEmail(email)

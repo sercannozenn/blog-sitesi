@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
     <link rel="icon" type="image/png" sizes="16x16" href="assets/backEnd/images/favicon.png')}}">
     <title>@yield('title')</title>
     <link href="{{ asset('assets/backEnd/libs/chartist/dist/chartist.min.css') }}" rel="stylesheet">
@@ -28,21 +28,13 @@
     <div class="preloader">
         <div class="loader">
             <div class="loader__figure"></div>
-            <p class="loader__label">Material Admin</p>
+            <p class="loader__label">Yazılım Eğitim Admin Panel</p>
         </div>
     </div>
-    <!-- ============================================================== -->
-    <!-- Preloader - style you can find in spinners.css -->
-    <!-- ============================================================== -->
     <header class="topbar">
-        <!-- ============================================================== -->
-        <!-- Navbar scss in header.scss -->
-        <!-- ============================================================== -->
+
         <nav>
             <div class="nav-wrapper">
-                <!-- ============================================================== -->
-                <!-- Logo you can find that scss in header.scss -->
-                <!-- ============================================================== -->
                 <a href="javascript:void(0)" class="brand-logo">
                         <span class="icon">
                             <img class="light-logo" src="{{asset('assets/backEnd/images/logo-light-icon.png')}}">
@@ -68,102 +60,71 @@
                             <span class="bars bar3"></span>
                         </a>
                     </li>
-
-
                 </ul>
                 <ul class="right">
-                    <li><a class="dropdown-trigger" href="javascript: void(0);" data-target="user_dropdown"><img
-                                src="{{asset('assets/backEnd/images/users/2.jpg')}}" alt="user" class="circle profile-pic"></a>
+                    <li>
+                        <a class="dropdown-trigger" href="javascript: void(0);" data-target="user_dropdown">
+                            <img src="{{asset('assets/backEnd/images/users/2.jpg')}}" alt="user"
+                                 class="circle profile-pic">
+                        </a>
                         <ul id="user_dropdown" class="mailbox dropdown-content dropdown-user">
                             <li>
                                 <div class="dw-user-box">
-                                    <div class="u-img"><img src="{{asset('assets/backEnd/images/users/2.jpg')}}" alt="user"></div>
+                                    <div class="u-img">
+                                        <img src="{{asset('assets/backEnd/images/users/2.jpg')}}" alt="user">
+                                    </div>
                                     <div class="u-text">
                                         <h4>{{ auth()->user()->name }}</h4>
                                         <p>{{ auth()->user()->email }}</p>
-                                        <a href="{{route('admin.viewProfile')}}" class="waves-effect waves-light btn-small red white-text">View Profile</a>
+                                        <a href="{{route('admin.viewProfile')}}"
+                                           class="waves-effect waves-light btn-small red white-text">
+                                            Profilim
+                                        </a>
                                     </div>
                                 </div>
                             </li>
                             <li role="separator" class="divider"></li>
-                            <li><a href="{{route('logout')}}"><i class="material-icons">power_settings_new</i>Logout</a>
+                            <li>
+                                <a href="{{route('logout')}}">
+                                    <i class="material-icons">power_settings_new</i>
+                                    Çıkış Yap
+                                </a>
                             </li>
                         </ul>
                     </li>
                 </ul>
-                <!-- ============================================================== -->
-                <!-- Right topbar icon scss in header.scss -->
-                <!-- ============================================================== -->
+
             </div>
         </nav>
-        <!-- ============================================================== -->
-        <!-- Navbar scss in header.scss -->
-        <!-- ============================================================== -->
+
     </header>
-    <!-- ============================================================== -->
-    <!-- Sidebar scss in sidebar.scss -->
-    <!-- ============================================================== -->
+
     <aside class="left-sidebar">
         <ul id="slide-out" class="sidenav">
-
             <li>
-                <ul class="collapsible">
-                    <li class="small-cap"><span class="hide-menu">PERSONAL</span></li>
-                    <li>
-                        <a href="javascript: void(0);" class="collapsible-header has-arrow"><i class="material-icons">dashboard</i><span
-                                class="hide-menu"> Dashboard</span></a>
-                        <div class="collapsible-body">
-                            <ul>
-                                <li><a href="index.html"><i class="material-icons">adjust</i><span class="hide-menu">Dashboard-1</span></a>
-                                </li>
-                                <li><a href="index2.html"><i class="material-icons">adjust</i><span class="hide-menu">Dashboard-2</span></a>
-                                </li>
-                                <li><a href="index3.html"><i class="material-icons">adjust</i><span class="hide-menu">Dashboard-3</span></a>
-                                </li>
-                                <li><a href="index4.html"><i class="material-icons">adjust</i><span class="hide-menu">Dashboard-4</span></a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                </ul>
+                @include('admin.navbar')
             </li>
         </ul>
     </aside>
     <div class="page-wrapper">
         <div class="container-fluid">
             @yield('content')
-
         </div>
-        <!-- ============================================================== -->
-        <!-- Container fluid scss in scafholding.scss -->
-        <!-- ============================================================== -->
-        <footer class="center-align m-b-30">All Rights Reserved by Materialart. Designed and Developed by <a
-                href="https://wrappixel.com">WrapPixel</a>.
-        </footer>
+        <footer class="center-align m-b-30">Tüm hakları saklıdır. &copy; {{ date('Y') }}  </footer>
     </div>
-    <!-- ============================================================== -->
-    <!-- Page wrapper scss in scafholding.scss -->
-    <!-- ============================================================== -->
-    <!-- ============================================================== -->
-    <!-- Right Sidebar -->
-    <!-- ============================================================== -->
     <a href="#" data-target="right-slide-out"
        class="sidenav-trigger right-side-toggle btn-floating btn-large waves-effect waves-light red"><i
             class="material-icons">settings</i></a>
     <aside class="right-sidebar">
-        <!-- Right Sidebar -->
         <ul id="right-slide-out" class="sidenav right-sidenav p-t-10">
             <li>
                 <div class="row">
                     <div class="col s12">
-                        <!-- Tabs -->
                         <ul class="tabs">
                             <li class="tab col s4"><a href="#settings" class="active"><span
                                         class="material-icons">build</span></a></li>
                         </ul>
-                        <!-- Tabs -->
                     </div>
-                    <!-- Setting -->
                     <div id="settings" class="col s12">
                         <div class="m-t-10 p-10 b-b">
                             <h6 class="font-medium">Layout Settings</h6>
@@ -202,7 +163,6 @@
                             </ul>
                         </div>
                         <div class="p-10 b-b">
-                            <!-- Logo BG -->
                             <h6 class="font-medium">Logo Backgrounds</h6>
                             <ul class="m-t-15 theme-color">
                                 <li class="theme-item"><a href="javascript:void(0)" class="theme-link"
@@ -218,10 +178,8 @@
                                 <li class="theme-item"><a href="javascript:void(0)" class="theme-link"
                                                           data-logobg="skin6"></a></li>
                             </ul>
-                            <!-- Logo BG -->
                         </div>
                         <div class="p-10 b-b">
-                            <!-- Navbar BG -->
                             <h6 class="font-medium">Navbar Backgrounds</h6>
                             <ul class="m-t-15 theme-color">
                                 <li class="theme-item"><a href="javascript:void(0)" class="theme-link"
@@ -237,10 +195,8 @@
                                 <li class="theme-item"><a href="javascript:void(0)" class="theme-link"
                                                           data-navbarbg="skin6"></a></li>
                             </ul>
-                            <!-- Navbar BG -->
                         </div>
                         <div class="p-10 b-b">
-                            <!-- Logo BG -->
                             <h6 class="font-medium">Sidebar Backgrounds</h6>
                             <ul class="m-t-15 theme-color">
                                 <li class="theme-item"><a href="javascript:void(0)" class="theme-link"
@@ -256,7 +212,6 @@
                                 <li class="theme-item"><a href="javascript:void(0)" class="theme-link"
                                                           data-sidebarbg="skin6"></a></li>
                             </ul>
-                            <!-- Logo BG -->
                         </div>
                     </div>
                 </div>
@@ -264,29 +219,18 @@
         </ul>
     </aside>
     <div class="chat-windows"></div>
-    <!-- ============================================================== -->
-    <!-- Right Sidebar -->
-    <!-- ============================================================== -->
 </div>
-<!-- ============================================================== -->
-<!-- All Required js -->
-<!-- ============================================================== -->
+
 <script src="{{asset('assets/backEnd/libs/jquery/dist/jquery.min.js') }}"></script>
 <script src="{{asset('assets/backEnd/dist/js/materialize.min.js') }}"></script>
 <script src="{{asset('assets/backEnd/libs/perfect-scrollbar/dist/js/perfect-scrollbar.jquery.min.js') }}"></script>
-<!-- ============================================================== -->
-<!-- Apps -->
-<!-- ============================================================== -->
+
 <script src="{{asset('assets/backEnd/dist/js/app.js') }}"></script>
 <script src="{{asset('assets/backEnd/dist/js/app.init.js') }}"></script>
 <script src="{{asset('assets/backEnd/dist/js/app-style-switcher.js') }}"></script>
-<!-- ============================================================== -->
-<!-- Custom js -->
-<!-- ============================================================== -->
+
 <script src="{{asset('assets/backEnd/dist/js/custom.min.js') }}"></script>
-<!-- ============================================================== -->
-<!-- This page plugin js -->
-<!-- ============================================================== -->
+
 <script src="{{asset('assets/backEnd/libs/chartist/dist/chartist.min.js') }}"></script>
 <script src="{{asset('assets/backEnd/libs/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js') }}"></script>
 <script src="{{asset('assets/backEnd/extra-libs/sparkline/sparkline.js') }}"></script>
@@ -315,5 +259,4 @@
 </script>
 @yield('js')
 </body>
-
 </html>

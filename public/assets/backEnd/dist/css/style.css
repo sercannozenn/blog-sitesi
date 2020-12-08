@@ -13154,3 +13154,6 @@ Padding margin property
 .swal2-content .select-wrapper{
     display:none;
 }
+.btn-block {
+    width: 100%;
+}
